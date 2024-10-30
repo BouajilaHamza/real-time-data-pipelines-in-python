@@ -10,19 +10,19 @@ requirements:
 .PHONY: build
 build: requirements
 	echo "Building Docker images"
-	docker-compose build
+	docker compose build
 
 # Start all services locally
 .PHONY: start
 start: build
 	echo "Starting local Kafka cluster"
-	docker-compose up -d --remove-orphans
+	docker compose up -d --remove-orphans
 
 # Stop all services locally
 .PHONY: stop
 stop:
 	echo "Stopping local Kafka cluster"
-	docker-compose down
+	docker compose down
 
 
 ### Development
